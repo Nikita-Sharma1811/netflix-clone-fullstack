@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: #141414;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.logo {
+  color: #e50914;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+/* Auth */
+.auth-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://assets.nflxext.com/ffe/siteui/vlv3/ab4b0b22-8fdc-45c4-9e84-00d80d4b4f76/26d1db16-7b0b-4d3d-9f6c-8d8d8d8d8d8d') center/cover no-repeat;
+}
+
+.auth-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.auth-page {
+  display: none;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
+}
+
+.auth-page.active {
+  display: block;
+}
+
+.auth-box {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 60px 40px 40px;
+  border-radius: 4px;
+}
+
+.auth-box h2 {
+  margin-bottom: 28px;
+  font-size: 2rem;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.auth-box input::placeholder {
+  color: #8c8c8c;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 16px;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+.btn-primary:hover {
+  background: #f40612;
+}
+
+.btn-secondary {
+  padding: 8px 16px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.auth-switch {
+  margin-top: 16px;
+  color: #737373;
+}
+
+.auth-switch a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+.error-msg {
+  color: #e87c03;
+  margin-top: 16px;
+  min-height: 20px;
+}
+
+.success-msg {
+  color: #46d369;
+  margin-top: 12px;
+  min-height: 20px;
+}
+
+/* App */
+.app-container {
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 4%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.hero {
+  height: 60vh;
+  background: linear-gradient(to top, #141414 10%, transparent 60%),
+    url('https://images.unsplash.com/photo-1489599849927-2ee91cede3a2?w=1600') center/cover no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 4% 80px;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: #e5e5e5;
+}
+
+.content {
+  padding: 0 4% 60px;
+}
+
+.add-movie-section {
+  margin-bottom: 40px;
+}
+
+.add-movie-section h3,
+.movies-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.add-movie-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  max-width: 900px;
+}
+
+.add-movie-form input,
+.add-movie-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background: #333;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.add-movie-form textarea {
+  grid-column: 1 / -1;
+  min-height: 80px;
+  resize: vertical;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.movie-card {
+  background: #1f1f1f;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-info {
+  padding: 12px;
+}
+
+.movie-info h4 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.movie-info p {
+  font-size: 0.85rem;
+  color: #b3b3b3;
+  line-height: 1.4;
+}
+
+.movie-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #46d369;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .auth-box {
+    padding: 40px 24px;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .movie-card img {
+    height: 200px;
+  }
+}
