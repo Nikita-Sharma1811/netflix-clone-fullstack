@@ -27,6 +27,26 @@ A Netflix-style movie streaming web app built with **HTML, CSS, JavaScript** (fr
 ---
 
 ## Project Structure
+Backend folder structure
+backend/
+├── config/
+│   └── db.js
+├── controllers/
+│   ├── authController.js
+│   └── movieController.js
+├── models/
+│   ├── User.js
+│   └── Movie.js
+├── routes/
+│   ├── authRoutes.js
+│   └── movieRoutes.js
+├── .env
+├── index.js
+├── server.js
+└── package.json
+package-lock.json is generated when you run npm instal
+
+
 Installation & Setup
 Step 1: Start MongoDB
 Make sure MongoDB is running on your machine.
